@@ -1,0 +1,38 @@
+{% extends 'indexlogin.html' %}
+{% block content %}
+	<div class="limiter" >
+		<div class="container-login100" style="background-color:darkcyan;">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(/static/images/bg-01.png);">
+					<span class="login100-form-title-1">
+						Leave Details
+					</span>
+				</div>
+
+<!--				{% for leave in leave %}-->
+<!--				<form class="login100-form validate-form" method="POST">-->
+<!--					{% csrf_token %}-->
+
+<!--                    <div class="flex-sb-m w-full p-b-30">-->
+						<p align="center"><font color="black" style="text-decoration:underline">Name</font>:	  {{leave.name}}</p>
+						<p align="center"><font color="black" style="text-decoration:underline">Reason</font>:		{{leave.reason}}</p>
+						<p align="center"><font color="black" style="text-decoration:underline">Parent Consent Type</font>:	{{leave.text}}</p>
+						<p align="center"><font color="black" style="text-decoration:underline">Departure Date</font>:		{{leave.depdate}}</p>
+						<p align="center"><font color="black" style="text-decoration:underline">Departure time</font>:		{{leave.deptime}}</p>
+						<p align="center"><font color="black" style="text-decoration:underline">Arrival Date</font>:	  {{leave.arrdate}}</p>
+						<p align="center"><font color="black" style="text-decoration:underline">Arrival Time</font>:	  {{leave.arrtime}}</p>
+						<p align="center"><font color="black" style="text-decoration:underline">Parent Contact Number</font>:	  {{leave.parent_number}}</p>
+<!--					</div>-->
+<!--				</form>-->
+<!--				{% endfor %}-->
+
+				<div class="text-align" align="center">
+					<button class="login100-form-btn">
+						Approve
+					</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}

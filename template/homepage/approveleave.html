@@ -1,0 +1,62 @@
+{% extends 'indexlogin.html' %}
+{% block content %}
+{% csrf_token %}
+<div class="limiter" >
+		<div class="container-login100" style="background-color:darkcyan;">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(/static/images/bg-01.png);">
+					<span class="login100-form-title-1">
+						Approve Leave
+
+					</span>
+				</div>
+				 <table style="width:100%" align="right">
+					  <tr>
+						<th align="center">Student Name</th>
+						<th>Approval Status</th>
+					  </tr>
+					 {% for leave in leaves %}
+					  <tr>
+						<td align="left"><a href="{% url 'hostel:leavedetails' leave.pk %}" >
+							{{ leave.profile.name }}
+							</a>
+						</td>
+						<td ><font color="grey">Not Approved</font></td>
+					  </tr>
+					  </tr>
+
+				{% endfor %}
+					 </table>
+
+<!--				<form class="login100-form validate-form" method="POST">-->
+<!--					{% csrf_token %}-->
+
+<!--                    <div class="flex-sb-m w-full p-b-30">-->
+
+
+<!--						<div>-->
+<!--							<a href="{% url 'hostel:leavedetails' %}" class="txt1">-->
+<!--								{{user.username}}-->
+<!--							</a>-->
+<!--						</div>-->
+
+<!--                        <div class="contact100-form-checkbox">-->
+<!--							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">-->
+<!--							<label class="label-checkbox100" for="ckb1">-->
+<!--								Approve?-->
+<!--							</label>-->
+<!--						</div>-->
+
+					</div>
+
+
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+<script>
+<!--	console.log("HI")-->
+</script>
+{% endblock %}

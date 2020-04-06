@@ -1,0 +1,76 @@
+{% extends 'indexlogin.html' %}
+{% block content %}
+{% csrf_token %}
+	
+	<div class="limiter" >
+		<div class="container-login100" style="background-color:darkcyan;">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(/static/images/bg-01.png);">
+					<span class="login100-form-title-1">
+						Apply For Leave
+
+					</span>
+				</div>
+
+				<form class="login100-form validate-form" method="POST">
+				{% csrf_token %}
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Name is required">
+						<span class="label-input100">Name</span>
+						<input class="input100" type="text" name="name" placeholder="Enter Name">
+						<span class="focus-input100"></span>
+                    </div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Reason is required">
+						<span class="label-input100">Reason</span>
+						<input class="input100" type="text" name="reason" placeholder="Enter Reason">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Consent type is required">
+						<span class="label-input100">Parent Consent Type</span>
+						<input class="input100" type="text" name="text" placeholder="(Letter/Fax/Email)">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Departure Date is required">
+						<span class="label-input100">Departure Date</span>
+						<input class="input100" type="date" name="depdate" placeholder="Enter Departure Date">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Departure Time is required">
+						<span class="label-input100">Departure Time</span>
+						<input class="input100" type="time" name="deptime" placeholder="Enter Departure Time">
+						<span class="focus-input100"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Arrival Date is required">
+						<span class="label-input100">Arrival Date</span>
+						<input class="input100" type="date" name="arrdate" placeholder="Enter Arrival Date">
+						<span class="focus-input100"></span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Arrival Time is required">
+						<span class="label-input100">Arrival Time</span>
+						<input class="input100" type="time" name="arrtime" placeholder="Enter Arrival Time">
+						<span class="focus-input100"></span>
+					</div>
+                    
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Contact details required">
+						<span class="label-input100">Contact During Leave</span>
+						<input class="input100" type="number" name="parent_number" placeholder="Enter valid Phone number" maxlength="10">
+						<span class="focus-input100"></span>
+                    </div>
+                    
+                    <div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Submit
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}
